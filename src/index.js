@@ -1,13 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Player from './components/player';
 
+let players =  [
+  {
+      player_name: "rohit auti",
+      player_number: 24,
+      total_points: 0
+  },
+  
+  {
+      player_name: "atishey",
+      player_number: 22,
+      total_points: 0
+  },
+  {
+    player_name: "thomas",
+    player_number: 2,
+    total_points: 0
+}
+
+
+]
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Player players={players}></Player>
   </React.StrictMode>
 );
 
