@@ -8,12 +8,12 @@ class Player extends Component{
         match: []
     }
     update_match_data(childData){
+
+    }
+    handleCallback = (childData) => {
         var joined = this.state.match.concat(childData)
         this.setState({match: joined})
         console.log(this.state.match)
-    }
-    handleCallback = (childData) => {
-        this.update_match_data(childData)
     }
     render(){
         const player_list = this.state["players"];
