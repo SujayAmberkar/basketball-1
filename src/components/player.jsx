@@ -7,9 +7,7 @@ class Player extends Component{
         players: this.props.players,
         match: []
     }
-    update_match_data(childData){
-
-    }
+    
     handleCallback = (childData) => {
         var joined = this.state.match.concat(childData)
         this.setState({match: joined})
@@ -25,7 +23,6 @@ class Player extends Component{
             player_list_components.push(
                 <div key={i}>
                     <Scoring key={i} player={this.state["players"][i]} parentCallback = {this.handleCallback} />
-                    <button onClick={() => this.update_match_data()}></button>
                 </div>        
                 
             )

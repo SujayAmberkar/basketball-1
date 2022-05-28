@@ -6,7 +6,7 @@ class Scoring extends Component{
     }
 
     onTrigger = (event) => {
-        this.props.parentCallback(event);
+        
     }
 
     update_match(point, player_name){
@@ -15,7 +15,7 @@ class Scoring extends Component{
             point: point,
             time: "t"
         }]
-        this.onTrigger(joined)
+        this.props.parentCallback(joined);
     }
 
     render(){
