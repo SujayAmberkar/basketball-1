@@ -5,13 +5,23 @@ class Scoring extends Component{
         match : []
     }
 
-    update_match(name){
+    return_match_data(){
+        return this.state.match
+    }
+
+    onTrigger = (event) => {
+        this.props.parentCallback(this.state.match);
+    }
+
+    update_match(point, player_name){
         var joined = this.state.match.concat([{
-            player_name: name,
+            player_name: player_name,
+            point: point,
             time: "t"
         }]) 
         this.setState({match: joined})
         console.log(this.state.match)
+        this.onTrigger()
     }
 
     render(){
@@ -24,9 +34,9 @@ class Scoring extends Component{
             <div key={this.props.i}>
                 <h5>{player_name}</h5>
                 <h5>{player_number}</h5>
-                <button>+{one}</button>
-                <button>+{two}</button>
-                <button>+{three}</button>
+                <button onClick={()=>this.update_match(one, player_name)}>+{one}</button>
+                <button onClick={()=>this.update_match(two, player_name)}>+{two}</button>
+                <button onClick={()=>this.update_match(three, player_name)}>+{three}</button>
             </div>
         );
     }

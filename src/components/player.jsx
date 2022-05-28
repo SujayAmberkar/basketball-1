@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, useCallback} from "react";
 import Scoring from "./player_scoring";
 
 
@@ -7,17 +7,29 @@ class Player extends Component{
         players: this.props.players,
         match: []
     }
-
+    update_match_data(childData){
+        var joined = this.state.match.concat(childData)
+        this.setState({match: joined})
+        console.log(this.state.match)
+    }
+    handleCallback = (childData) => {
+        this.update_match_data(childData)
+    }
     render(){
         const player_list = this.state["players"];
-        console.log(player_list)
         let total_players = player_list.length;
+        console.log(total_players)
 
         let player_list_components = []
         for (let i = 0; i < total_players; i++ ){
-            player_list_components.push(<Scoring key={i} player={this.state["players"][i]} />)
+            player_list_components.push(
+                <div key={i}>
+                    <Scoring key={i} player={this.state["players"][i]} parentCallback = {this.handleCallback} />
+                    <button onClick={() => this.update_match_data()}></button>
+                </div>        
+                
+            )
         }
-        console.log(player_list_components)
         return (
             <div>
                 {player_list_components}
