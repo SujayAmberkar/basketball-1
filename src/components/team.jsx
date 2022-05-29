@@ -40,8 +40,7 @@ class Player extends Component{
             player_list_components.push(
                 <div key={i}>
                     <Scoring player={this.state["players"][i]} parentCallback = {this.handleCallback} />
-                </div>        
-                
+                </div>
             )
         }
         return (

@@ -57,5 +57,4 @@ root.render(
   </div>
 );
 
-
 reportWebVitals();
