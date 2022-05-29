@@ -4,6 +4,7 @@ import Scoring from "./player_scoring";
 
 class Player extends Component{
     state = {
+        start_time: this.props.start_time,
         team_name: this.props.team.team_name,
         players: this.props.team.team_players,
         total_score: 0,
@@ -39,7 +40,7 @@ class Player extends Component{
         for (let i = 0; i < total_players; i++ ){
             player_list_components.push(
                 <div key={i}>
-                    <Scoring player={this.state["players"][i]} parentCallback = {this.handleCallback} />
+                    <Scoring start_time={this.state.start_time} player={this.state["players"][i]} parentCallback = {this.handleCallback} />
                 </div>
             )
         }

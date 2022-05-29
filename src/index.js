@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ScoreSheet from './components/score_sheet'
+import StartMatch from './components/start_match'
 
 let players =  {
     team_a:{
@@ -53,7 +53,7 @@ let players =  {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <div>
-    <ScoreSheet players = {players}></ScoreSheet>
+    <StartMatch players = {players}></StartMatch>
   </div>
 );
 

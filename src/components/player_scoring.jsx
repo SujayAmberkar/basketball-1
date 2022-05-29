@@ -2,25 +2,20 @@ import React, {Component} from "react";
 
 class Scoring extends Component{
     state = {
+        start_time: this.props.start_time,
         match : []
     }
 
-    paddding_time(t){
-        if(t.length === 2){
-            return t
-        }else{
-            const new_t = "0" + t
-            return new_t
-        }
-    }
 
     update_match(point, player_name){
         var t = new Date()
-        const time = this.paddding_time(t.getUTCHours().toString()) + this.paddding_time(t.getUTCMinutes().toString())+ this.paddding_time(t.getUTCSeconds().toString())
+        const time = t.getUTCHours()*3600 + t.getUTCMinutes()*60+ t.getUTCSeconds()
+        
+        console.log(this.state.start_time)
         var joined = [{
             "player_name": player_name,
             "point": point,
-            "time": time
+            "time": time - this.state.start_time
         }]
         this.props.parentCallback(joined);
     }
