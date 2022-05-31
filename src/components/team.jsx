@@ -1,3 +1,4 @@
+//import { Button } from "bootstrap";
 import React, {Component} from "react";
 import Scoring from "./player_scoring";
 
@@ -53,7 +54,7 @@ class Player extends Component{
 
                     {player_list_components}
                 </div>
-                <button id="end_match" onClick={()=>this.log_match()}>confirm</button>
+                <button style = {{color:'red'}} id="end_match" onClick={()=>this.log_match()}>CONFIRM</button>
             </div>
 
         );

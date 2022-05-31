@@ -31,5 +31,10 @@ code {
 }
 .name_and_number{
   display: flex;
-  justify-content: space-between;
+  text-align: center;
+  justify-content: space-evenly;
 }
+
+button:{
+  background-color:chartreuse,
+  }

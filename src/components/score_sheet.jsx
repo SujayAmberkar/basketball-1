@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import { Card } from "react-bootstrap";
 import Player from "./team";
 import axios from "axios";
 
@@ -56,9 +57,19 @@ class ScoreSheet extends Component{
 
         return(
                 <div className='score_sheet'>
-                    <Player start_time={start_time} team={team_a}parentCallback={this.handleCallbackA}></Player>
-                    <Player start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
-                    <button onClick={()=>this.end_match()}>END MATCH</button>
+                    <Card style={{ width: '25rem' }}>
+                        <Card.Body>
+                            <Card.Title>TEAM 1</Card.Title>
+                            <Player start_time={start_time} team={team_a}parentCallback={this.handleCallbackA}></Player>
+                        </Card.Body>
+                    </Card>
+                    <Card style={{ width: '25rem' }}>
+                        <Card.Body>
+                            <Card.Title>TEAM 2</Card.Title>
+                            <Player start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
+                        </Card.Body>
+                    </Card>
+                    <button onClick={()=>this.end_match()}>END MAT+CH</button>
                 </div>
         );
     }
