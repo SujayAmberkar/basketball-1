@@ -27,7 +27,7 @@ class Scoring extends Component{
 
         return (
             <div className="player_details" key={this.props.i}>
-                <div className="name_and_number"><h5>{player_name.toUpperCase()}</h5><h5>{player_number}</h5></div>
+                <div className="name_and_number"><h3>{player_number}</h3><h5>{player_name.toUpperCase()}</h5></div>
                 <button onClick={()=>this.update_match(one, player_name)}>+{one}</button>
                 <button onClick={()=>this.update_match(two, player_name)}>+{two}</button>
                 <button onClick={()=>this.update_match(three, player_name)}>+{three}</button>
