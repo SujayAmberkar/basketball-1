@@ -7,13 +7,14 @@ class Scoring extends Component{
     }
 
 
-    update_match(point, player_name){
+    update_match(point, player_name, player_number){
         var t = new Date()
         const time = t.getUTCHours()*3600 + t.getUTCMinutes()*60+ t.getUTCSeconds()
         
         console.log(this.state.start_time)
         var joined = [{
             "player_name": player_name,
+            "player_number": player_number,
             "point": point,
             "time": time - this.state.start_time
         }]
@@ -28,9 +29,9 @@ class Scoring extends Component{
         return (
             <div className="player_details" key={this.props.i}>
                 <div className="name_and_number"><h5>{player_name.toUpperCase()}</h5><h5>{player_number}</h5></div>
-                <button onClick={()=>this.update_match(one, player_name)}>+{one}</button>
-                <button onClick={()=>this.update_match(two, player_name)}>+{two}</button>
-                <button onClick={()=>this.update_match(three, player_name)}>+{three}</button>
+                <button onClick={()=>this.update_match(one, player_name, player_number)}>+{one}</button>
+                <button onClick={()=>this.update_match(two, player_name, player_number)}>+{two}</button>
+                <button onClick={()=>this.update_match(three, player_name, player_number)}>+{three}</button>
             </div>
         );
     }

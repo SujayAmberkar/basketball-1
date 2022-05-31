@@ -13,11 +13,15 @@ let players =  {
             player_number: 24,
             total_points: 0
         },
-        
         {
             player_name: "atishey",
             player_number: 22,
             total_points: 0
+        },
+        {
+          player_name: "pranjal",
+          player_number: 8,
+          total_points: 0
         },
         {
           player_name: "thomas",
@@ -27,21 +31,26 @@ let players =  {
     ]
   },
     team_b:{
-        team_name: "iit delhi",
+        team_name: "Gst Samll ball",
         team_players: [
         {
-            player_name: "rohit auti",
+            player_name: "yousuf",
             player_number: 24,
             total_points: 0
         },
         
         {
-            player_name: "atishey",
+            player_name: "siddhant shinde",
             player_number: 22,
             total_points: 0
         },
         {
-          player_name: "thomas",
+          player_name: "ajinkya mane",
+          player_number: 22,
+          total_points: 0
+        },
+        {
+          player_name: "sameer",
           player_number: 2,
           total_points: 0
       }

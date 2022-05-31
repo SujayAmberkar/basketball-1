@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Player from "./team";
+import axios from "axios";
 
 class ScoreSheet extends Component{
     state = {
@@ -28,6 +29,25 @@ class ScoreSheet extends Component{
         this.setState({match: team_data})
     }
 
+    end_match(){
+        const url = "https://us-central1-demo1-326813.cloudfunctions.net/testBasketballData"
+        const match_data = this.state.match
+        const json_match_data = JSON.stringify(match_data)
+        console.log(match_data)
+        // Simple POST request with a JSON body using fetch
+        axios({
+            method: 'post',
+            url: url,
+            data: {match_data: match_data}
+        })
+        .then(res => {
+            console.log(res);
+        })
+        .catch(err=>{
+            console.log(err)
+        });
+    }
+
     render(){
         const team_a = this.state.teams.team_a
         const team_b = this.state.teams.team_b
@@ -38,6 +58,7 @@ class ScoreSheet extends Component{
                 <div className='score_sheet'>
                     <Player start_time={start_time} team={team_a}parentCallback={this.handleCallbackA}></Player>
                     <Player start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
+                    <button onClick={()=>this.end_match()}>END MATCH</button>
                 </div>
         );
     }
