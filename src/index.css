@@ -34,8 +34,3 @@ code {
   text-align: center;
   justify-content: space-evenly;
 }
-
-.btn_holder{
-  justify-content: flex-end;
-  display: flex;
-}
