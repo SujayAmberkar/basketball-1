@@ -43,7 +43,7 @@ class ScoreSheet extends Component{
     }
 
     end_match(){
-        const url = "http://127.0.0.1:5000/player_highlights"
+        const url = "http://127.0.0.1:5000/test"
         const match_data = this.state.match
         console.log(match_data)
         // Simple POST request with a JSON body using fetch
