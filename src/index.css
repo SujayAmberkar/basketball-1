@@ -35,6 +35,7 @@ code {
   justify-content: space-evenly;
 }
 
-button:{
-  background-color:chartreuse,
-  }
+.btn_holder{
+  justify-content: flex-end;
+  display: flex;
+}

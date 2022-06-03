@@ -56,7 +56,6 @@ class Player extends Component{
                 </div>
                 <button style = {{color:'red'}} id="end_match" onClick={()=>this.log_match()}>CONFIRM</button>
             </div>
-
         );
     }
 }
