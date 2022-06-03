@@ -9,22 +9,22 @@ let players =  {
         team_name: "iit bombay",
         team_players: [
         {
-            player_name: "rohit auti",
-            player_number: 24,
+            player_name: "carina",
+            player_number: 14,
             total_points: 0
         },
         {
-            player_name: "atishey",
+            player_name: "short sister",
             player_number: 22,
             total_points: 0
         },
         {
-          player_name: "pranjal",
+          player_name: "tall sister",
           player_number: 8,
           total_points: 0
         },
         {
-          player_name: "thomas",
+          player_name: "center",
           player_number: 2,
           total_points: 0
       }

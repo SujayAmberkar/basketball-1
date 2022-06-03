@@ -43,7 +43,7 @@ class ScoreSheet extends Component{
     }
 
     end_match(){
-        const url = "https://us-central1-demo1-326813.cloudfunctions.net/testBasketballData"
+        const url = "http://127.0.0.1:5000/player_highlights"
         const match_data = this.state.match
         console.log(match_data)
         // Simple POST request with a JSON body using fetch
@@ -60,6 +60,10 @@ class ScoreSheet extends Component{
         });
     }
 
+    confirm(){
+        
+    }
+
     render(){
         const team_a = this.state.teams.team_a
         const team_b = this.state.teams.team_b
@@ -67,6 +71,8 @@ class ScoreSheet extends Component{
         console.log(this.state.match)
 
         return(
+
+
             <Grid container spacing={2} columns={16}>
                 <Grid item xs={8}>
                     <Item>
