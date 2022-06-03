@@ -31,7 +31,7 @@ class ScoreSheet extends Component{
     }
 
     end_match(){
-        const url = "https://us-central1-demo1-326813.cloudfunctions.net/testBasketballData"
+        const url = "http://127.0.0.1:5000/player_highlights"
         const match_data = this.state.match
         console.log(match_data)
         // Simple POST request with a JSON body using fetch
@@ -46,6 +46,10 @@ class ScoreSheet extends Component{
         .catch(err=>{
             console.log(err)
         });
+    }
+
+    confirm(){
+        
     }
 
     render(){
@@ -68,7 +72,8 @@ class ScoreSheet extends Component{
                             <Player start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
                         </Card.Body>
                     </Card>
-                    <button onClick={()=>this.end_match()}>END MAT+CH</button>
+                    <button onClick={()=>this.confirm()}>CONFIRM</button>
+                    <button onClick={()=>this.end_match()}>END MATCH</button>
                 </div>
         );
     }
