@@ -7,6 +7,7 @@ import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
+import StopWatch from "./Timer/stopwatch";
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -74,6 +75,11 @@ class ScoreSheet extends Component{
 
 
             <Grid container spacing={2} columns={16}>
+                <Grid item xs={16}>
+                    <Item>
+                        <StopWatch></StopWatch>
+                    </Item>
+                </Grid>
                 <Grid item xs={8}>
                     <Item>
                         <Player ref="child1" start_time={start_time} team={team_a}parentCallback={this.handleCallbackA}></Player>
