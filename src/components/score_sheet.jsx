@@ -38,14 +38,15 @@ class ScoreSheet extends Component{
 
 
     end_match(){
-        const url = "https://us-central1-demo1-326813.cloudfunctions.net/testBasketballData"
+        const url = "https://http://127.0.0.1:5000/player_highlights"
         const match_data = this.state.match
         console.log(match_data)
         // Simple POST request with a JSON body using fetch
         axios({
             method: 'post',
             url: url,
-            data: {match_data: match_data}
+            data: {match_data: match_data},
+            headers: {match_data: match_data}
         })
         .then(res => {
             console.log(res);
