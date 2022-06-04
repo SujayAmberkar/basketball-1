@@ -1,6 +1,19 @@
 //import { Button } from "bootstrap";
 import React, {Component} from "react";
 import Scoring from "./player_scoring";
+import { styled } from '@mui/material/styles';
+import Paper from '@mui/material/Paper';
+import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
+
+const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+    ...theme.typography.body2,
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
 
 
 class Player extends Component{
@@ -47,15 +60,24 @@ class Player extends Component{
             )
         }
         return (
-            <div>
-                <div id={this.state.team_name}>
-                    <div id="score">
-                        <h1>{this.state.team_name} {"->"} {this.state.total_score}</h1>
-                    </div>
 
+            <Grid container spacing={2} columns={16}>
+                <Grid item xs={16} id={this.state.team_name}>
+                    <Item id="score">
+                        <h1>{this.state.team_name.toUpperCase()} {" | "} {this.state.total_score}</h1>
+                    </Item>
                     {player_list_components}
-                </div>
-            </div>
+                </Grid>
+            </Grid>
+            // <div>
+            //     <div id={this.state.team_name}>
+            //         <div id="score">
+            //             <h1>{this.state.team_name} {"->"} {this.state.total_score}</h1>
+            //         </div>
+
+            //         {player_list_components}
+            //     </div>
+            // </div>
         );
     }
 }

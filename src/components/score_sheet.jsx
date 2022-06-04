@@ -5,6 +5,8 @@ import axios from "axios";
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
+import Button from '@mui/material/Button';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -82,12 +84,21 @@ class ScoreSheet extends Component{
                         <Player ref="child2" start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
                     </Item>
                 </Grid>
-                <Grid item xs={16}>
+                <Grid item xs={8}>
                     <Item>
-                    <button onClick={()=>this.confirm()}>CONFIRM</button>
-                        <button onClick={()=>this.end_match()}>END MATCH</button>
+                        <ButtonGroup size="large" color="success" variant="contained" aria-label="outlined primary button group">
+                            <Button onClick={()=>this.confirm()}>CONFIRM</Button>
+                        </ButtonGroup>
                     </Item>
                 </Grid>
+                <Grid item xs={8}>
+                    <Item>
+                        <ButtonGroup size="large" color="warning" variant="contained" aria-label="outlined primary button group">
+                            <Button onClick={()=>this.end_match()}>END MATCH</Button>
+                        </ButtonGroup>
+                    </Item>
+                </Grid>
+                
             </Grid>
         );
     }
