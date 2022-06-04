@@ -23,7 +23,8 @@ class Player extends Component{
                 final_score: this.state.total_score,
                 match_data: this.state.match
         }
-        this.props.parentCallback(parent_data)
+        return parent_data
+        // this.props.parentCallback(parent_data)
     }
 
     handleCallback = (childData) => {
@@ -54,7 +55,6 @@ class Player extends Component{
 
                     {player_list_components}
                 </div>
-                <button style = {{color:'red'}} id="end_match" onClick={()=>this.log_match()}>CONFIRM</button>
             </div>
         );
     }

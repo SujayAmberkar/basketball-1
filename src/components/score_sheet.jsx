@@ -30,20 +30,15 @@ class ScoreSheet extends Component{
         return time
     }
 
-    handleCallbackA = (childData) =>{
-        console.log(childData)
-        const team_data = this.state.match.concat({team_a: childData})
+    handleCallbackA = (a, b) =>{
+        console.log(a, b)
+        const team_data = this.state.match.concat({team_a: a}).concat({team_b: b})
         this.setState({match: team_data})
+    }
 
-    }
-    handleCallbackB = (childData) =>{
-        console.log(childData)
-        const team_data = this.state.match.concat({team_b: childData})
-        this.setState({match: team_data})
-    }
 
     end_match(){
-        const url = "http://127.0.0.1:5000/test"
+        const url = "https://us-central1-demo1-326813.cloudfunctions.net/testBasketballData"
         const match_data = this.state.match
         console.log(match_data)
         // Simple POST request with a JSON body using fetch
@@ -61,7 +56,10 @@ class ScoreSheet extends Component{
     }
 
     confirm(){
-        
+        const a =this.refs.child1.log_match()
+        const b = this.refs.child2.log_match()
+        console.log(a, b)
+        this.handleCallbackA(a, b)
     }
 
     render(){
@@ -76,16 +74,17 @@ class ScoreSheet extends Component{
             <Grid container spacing={2} columns={16}>
                 <Grid item xs={8}>
                     <Item>
-                        <Player start_time={start_time} team={team_a}parentCallback={this.handleCallbackA}></Player>
+                        <Player ref="child1" start_time={start_time} team={team_a}parentCallback={this.handleCallbackA}></Player>
                     </Item>
                 </Grid>
                 <Grid item xs={8}>
                     <Item>
-                        <Player start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
+                        <Player ref="child2" start_time={start_time} team={team_b} parentCallback={this.handleCallbackB}></Player>
                     </Item>
                 </Grid>
                 <Grid item xs={16}>
                     <Item>
+                    <button onClick={()=>this.confirm()}>CONFIRM</button>
                         <button onClick={()=>this.end_match()}>END MATCH</button>
                     </Item>
                 </Grid>
