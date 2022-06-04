@@ -42,14 +42,14 @@ class Scoring extends Component{
                 key={this.props.i}
             >
 
-                <ButtonGroup variant="outlined" size="small" aria-label="text button group">
+                <ButtonGroup variant="text" size="small" aria-label="outlined button group">
                     <Button>{player_number}</Button>
                     <Button>{player_name.toUpperCase()}</Button>
                 </ButtonGroup>
-                <ButtonGroup variant="text" size="large" aria-label="outlined button group">
+                <ButtonGroup size="large" variant="contained" aria-label="outlined primary button group">
                     <Button onClick={()=>this.update_match(one, player_name, player_number)}>+{one}</Button>
-                        <Button onClick={()=>this.update_match(two, player_name, player_number)}>+{two}</Button>
-                        <Button onClick={()=>this.update_match(three, player_name, player_number)}>+{three}</Button>
+                    <Button onClick={()=>this.update_match(two, player_name, player_number)}>+{two}</Button>
+                    <Button onClick={()=>this.update_match(three, player_name, player_number)}>+{three}</Button>
                 </ButtonGroup>
 
             </Box>
