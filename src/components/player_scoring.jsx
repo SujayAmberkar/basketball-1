@@ -9,7 +9,6 @@ class Scoring extends Component{
         match : []
     }
 
-
     update_match(point, player_name, player_number){
         var t = new Date()
         const time = t.getUTCHours()*3600 + t.getUTCMinutes()*60+ t.getUTCSeconds()
