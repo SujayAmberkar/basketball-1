@@ -1,7 +1,7 @@
 import { Typography } from '@mui/material'
 import React,{useState} from 'react';
 import './PlayerDetail.css'
-import TableComponent from './TableComponent';
+import TableComponent from '../../components/TableComponent';
 import { Link } from 'react-router-dom';
 
 function PlayerDetail() {
@@ -21,18 +21,18 @@ function PlayerDetail() {
       <div className="team">
         <Typography>Team A</Typography>
         <Typography>Playing 5</Typography>
-        <TableComponent edit={edit} url={'https://jsonplaceholder.typicode.com'}/>
+        <TableComponent edit={edit}/>
         <Typography>Substitutes</Typography>
-        <TableComponent edit={edit} url={'https://jsonplaceholder.typicode.com'}/>
+        <TableComponent edit={edit} />
         <button onClick={confirmHandler}>{confirmButton}</button>
       </div>
 
       <div className="team">
         <Typography>Team B</Typography>
         <Typography>Playing 5</Typography>
-        <TableComponent edit={edit} url={'https://jsonplaceholder.typicode.com'}/>
+        <TableComponent edit={edit} />
         <Typography>Substitutes</Typography>
-        <TableComponent edit={edit} url={'https://jsonplaceholder.typicode.com'}/>
+        <TableComponent edit={edit} />
         <Link to="/Scoreboard"><button>Start Match</button></Link>
       </div>
     </div>
