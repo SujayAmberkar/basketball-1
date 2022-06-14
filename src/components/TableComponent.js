@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 // import axios from 'axios';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -11,6 +11,9 @@ import { TextField
  } from '@mui/material';
 function TableComponent(props) {
 
+    const [playerReg, setPlayerReg] = useState(Array.from({length: props.playerType}, (_, i) => i + 1))
+    const [PlayerData, setPlayerData] = useState({})
+
   return (
     <div>
         <TableContainer component={Paper}>
@@ -22,46 +25,22 @@ function TableComponent(props) {
                     </TableRow>
                 </TableHead>
                 <TableBody>
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            <TextField disabled={props.edit} id="outlined-basic" label="Number" variant="outlined" />
-                        </TableCell>
-                        <TableCell component="th" scope="row"> 
-                            <TextField disabled={props.edit} id="outlined-basic" label="Player 1" variant="outlined" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            <TextField disabled={props.edit} id="outlined-basic" label="Number" variant="outlined" />
-                        </TableCell>
-                        <TableCell component="th" scope="row"> 
-                            <TextField disabled={props.edit} id="outlined-basic" label="Player 2" variant="outlined" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            <TextField disabled={props.edit} id="outlined-basic" label="Number" variant="outlined" />
-                        </TableCell>
-                        <TableCell component="th" scope="row"> 
-                            <TextField disabled={props.edit} id="outlined-basic" label="Player 3" variant="outlined" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            <TextField disabled={props.edit} id="outlined-basic" label="Number" variant="outlined" />
-                        </TableCell>
-                        <TableCell component="th" scope="row"> 
-                            <TextField disabled={props.edit} id="outlined-basic" label="Player 4" variant="outlined" />
-                        </TableCell>
-                    </TableRow>
-                    <TableRow>
-                        <TableCell component="th" scope="row">
-                            <TextField disabled={props.edit} id="outlined-basic" label="Number" variant="outlined" />
-                        </TableCell>
-                        <TableCell component="th" scope="row"> 
-                            <TextField disabled={props.edit} id="outlined-basic" label="Player 5" variant="outlined" />
-                        </TableCell>
-                    </TableRow> 
+                    {
+                        playerReg.map((i)=>{
+                            return(
+                                <TableRow>
+                                    <TableCell component="th" scope="row">
+                                        <TextField disabled={props.edit} id="outlined-basic" label="Number" variant="outlined" name={"number"+i.toString()}/>
+                                    </TableCell>
+                                    <TableCell component="th" scope="row"> 
+                                        <TextField disabled={props.edit} id="outlined-basic" label={"Player "+i.toString()} variant="outlined" name={"player"+i.toString()} />
+                                    </TableCell>
+                                </TableRow>
+                            )
+                            
+                        })
+                        
+                    }
                 </TableBody>
             </Table>
         </TableContainer>
