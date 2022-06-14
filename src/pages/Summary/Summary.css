@@ -1,0 +1,26 @@
+.total-score{
+    display: flex;
+    width: 15rem;
+    place-content: center;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    margin: 2rem 0 0 15rem;
+}
+
+
+.left-container{
+    margin: 1rem;
+    width: 50%;
+}
+
+.right-container{
+    flex-grow: 1;
+    margin: 1rem;
+    
+}
+.player-mvp{
+    display: flex;
+    width: 25rem;
+    place-content: center;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    margin: 2rem 0 0 10rem;
+}
