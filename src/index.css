@@ -11,26 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.score_sheet {
-  width: auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-
-.team_sheet{
-  width: auto;
-  display: inline-block;
-
-  
-}
-
-.player_details{
-  text-align: center;
-}
-.name_and_number{
-  display: flex;
-  text-align: center;
-  justify-content: space-evenly;
-}
