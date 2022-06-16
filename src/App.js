@@ -32,7 +32,7 @@ class App extends Component {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<PlayerDetail ref={this.playerDetails}/>} />
-            <Route path="ScoreBoard" element={<ScoreBoard plsyaer={this.state.players} />} />
+            <Route path="ScoreBoard" element={<ScoreBoard players={this.state.players} />} />
             <Route path="Summary" element={<Summary />} />
           </Routes>
         </BrowserRouter>
