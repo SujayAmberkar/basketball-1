@@ -1,4 +1,4 @@
-import { responsiveFontSizes, Typography } from '@mui/material'
+import {Typography } from '@mui/material'
 import React,{Component, } from 'react';
 import './PlayerDetail.css'
 import TableComponent from '../../components/TableComponent';
@@ -8,8 +8,8 @@ class PlayerDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      team_a:{playing_5: [], extras: []},
-      team_b:{playing_5: [], extras: []},
+      team_a:{team_name: "",playing_5: [], extras: []},
+      team_b:{team_name: "",playing_5: [], extras: []},
       edit: false,
       confirmButton: "Confirm"
     }
