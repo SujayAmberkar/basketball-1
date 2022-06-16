@@ -29,19 +29,27 @@ class PlayerDetail extends Component {
     console.log(taexState)
     console.log(tbp5State)
     console.log(tbexState)
-    const teams = ["team_a","team_b"]
-    for(var j=1; j<=2; j++){
-      var playing5 = []
-      var extras = []
-      for(var i=1; i<=11;i++ ){
-        if(i<=5){playing5 = [...playing5, {[tap5State["pno"+ i]] : tap5State["pname"+ i]}]}else{
-          extras = [...extras, {[taexState["pno"+ i]] : taexState["pname"+ i]}]
-        }
+ 
+    var taplaying5 = []
+    var taextras = []
+    for(var i=1; i<=11;i++ ){
+      if(i<=5){taplaying5 = [...taplaying5, {[tap5State["pno"+ i]] : tap5State["pname"+ i]}]}else{
+        taextras = [...taextras, {[taexState["pno"+ i]] : taexState["pname"+ i]}]
       }
-      this.setState({[teams[j-1]]: {playing_5: playing5, extras: extras}})
-      console.log(playing5, extras)
-
     }
+    this.setState({team_a: {playing_5: taplaying5, extras: taextras}})
+    console.log(taplaying5, taextras)
+    var tbplaying5 = []
+    var tbextras = []
+    for(var j=1; j<=11;j++ ){
+      if(j<=5){tbplaying5 = [...tbplaying5, {[tbp5State["pno"+ j]] : tbp5State["pname"+ j]}]}else{
+        tbextras = [...tbextras, {[tbexState["pno"+ j]] : tbexState["pname"+ j]}]
+      }
+    }
+    this.setState({team_b: {playing_5: tbplaying5, extras: tbextras}})
+    console.log(tbplaying5, tbextras)
+
+    
   }
 
   
