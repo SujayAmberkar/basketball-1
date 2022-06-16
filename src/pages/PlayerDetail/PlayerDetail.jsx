@@ -49,7 +49,7 @@ class PlayerDetail extends Component {
     this.setState({team_b: {playing_5: tbplaying5, extras: tbextras}})
     console.log(tbplaying5, tbextras)
 
-    
+    this.props.setPlayers({team_a: {playing_5: taplaying5, extras: taextras}}, {team_b: {playing_5: tbplaying5, extras: tbextras}})
   }
 
   
@@ -61,10 +61,7 @@ class PlayerDetail extends Component {
       this.setState({confirmButton: "Confirm"})
       this.setState({edit: false})
     }
-
     this.update_players()
-
-    
   }
 
 

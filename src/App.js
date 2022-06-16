@@ -11,27 +11,29 @@ import ScoreBoard from './pages/ScoreBoard/ScoreBoard';
 
 class App extends Component {
   constructor(props) {
-      super(props);
-      this.state = {
-        players : this.setPlayers
-      }
-      this.playerDetails = React.createRef();
+    super(props);
+    this.state = {
+      players : {}
     }
-  setPlayers(){
-    const tapd = this.playerDetails.current.state.team_a
-    const tbpd = this.playerDetails.current.state.team_b
+    this.playerDetails = React.createRef();
+  }
+  setPlayers= (team_a, team_b)=>{
+    const tapd = team_a
+    const tbpd = team_b
     console.log(tapd, tbpd)
-    return({
+    const players_data = {
       team_a: tapd,
       team_b: tbpd
-    })
+    }
+    this.setState({players: players_data})
+
   }
   render(){
     return (
       <div className="App">
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<PlayerDetail ref={this.playerDetails}/>} />
+            <Route path="/" element={<PlayerDetail setPlayers={this.setPlayers} ref={this.playerDetails}/>} />
             <Route path="ScoreBoard" element={<ScoreBoard players={this.state.players} />} />
             <Route path="Summary" element={<Summary />} />
           </Routes>
