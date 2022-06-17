@@ -1,0 +1,20 @@
+.main-container{
+    display: flex;
+}
+
+.team-card{
+    /* width: 40rem; */
+    height: fit-content;
+    margin: 0.5rem;
+    padding: 1rem;
+    width: fit-content;
+}
+
+.scoreButtons{
+    width: fit-content;
+    margin: 1rem;
+}
+
+.Player-list{
+    margin: 1rem;
+}

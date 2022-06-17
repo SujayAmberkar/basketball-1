@@ -1,0 +1,8 @@
+.ScoreCard-main{
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.timer-button{
+    width: 5rem;
+}
