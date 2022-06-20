@@ -13,7 +13,18 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      players : {}
+      players : {
+        team_a:{
+          team_name: "teamA",
+          playing_5: [{number:1,name:"player1"},{number:2,name:"player2"},{number:3,name:"player3"},{number:4,name:"player4"},{number:5,name:"player5"}],
+          extras: [{number:1,name:"player6"},{number:1,name:"player7"},{number:1,name:"player8"}]
+        },
+        team_b:{
+          team_name: "teamB",
+          playing_5: [{number:1,name:"player1"},{number:2,name:"player2"},{number:3,name:"player3"},{number:4,name:"player4"},{number:5,name:"player5"}],
+          extras: [{number:1,name:"player6"},{number:1,name:"player7"},{number:1,name:"player8"}]
+        }
+      }
     }
     this.playerDetails = React.createRef();
   }
@@ -22,8 +33,8 @@ class App extends Component {
     const tbpd = team_b
     console.log(tapd, tbpd)
     const players_data = {
-      team_a: tapd,
-      team_b: tbpd
+      team_a: tapd.team_a,
+      team_b: tbpd.team_b
     }
     this.setState({players: players_data})
 

@@ -8,8 +8,8 @@ class PlayerDetail extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      team_a:{team_name: "",playing_5: [], extras: []},
-      team_b:{team_name: "",playing_5: [], extras: []},
+      team_a:{team_name: "",playing_5: [{1:"p1"},{2:"p2"},{3:"p3"},{4:"p4"},{5:"p5"}], extras: [{6:"p6"},{7:"p7"},{8:"p8"},{9:"p9"},{10:"p10"},{11: "p11"}]},
+      team_b:{team_name: "",playing_5: [{1:"p1"},{2:"p2"},{3:"p3"},{4:"p4"},{5:"p5"}], extras: [{6:"p6"},{7:"p7"},{8:"p8"},{9:"p9"},{10:"p10"},{11: "p11"}]},
       edit: false,
       confirmButton: "Confirm"
     }
@@ -37,7 +37,7 @@ class PlayerDetail extends Component {
         taextras = [...taextras, {[taexState["pno"+ i]] : taexState["pname"+ i]}]
       }
     }
-    this.setState({team_a: {playing_5: taplaying5, extras: taextras}})
+    this.setState({team_a: {team_name: "team_a",playing_5: taplaying5, extras: taextras}})
     console.log(taplaying5, taextras)
     var tbplaying5 = []
     var tbextras = []
@@ -46,10 +46,10 @@ class PlayerDetail extends Component {
         tbextras = [...tbextras, {[tbexState["pno"+ j]] : tbexState["pname"+ j]}]
       }
     }
-    this.setState({team_b: {playing_5: tbplaying5, extras: tbextras}})
+    this.setState({team_b: {team_name: "team_b",playing_5: tbplaying5, extras: tbextras}})
     console.log(tbplaying5, tbextras)
 
-    this.props.setPlayers({team_a: {playing_5: taplaying5, extras: taextras}}, {team_b: {playing_5: tbplaying5, extras: tbextras}})
+    
   }
 
   
@@ -62,6 +62,8 @@ class PlayerDetail extends Component {
       this.setState({edit: false})
     }
     this.update_players()
+    console.log(this.state)
+    this.props.setPlayers({team_a: this.state.team_a}, {team_b: this.state.team_b})
   }
 
 
