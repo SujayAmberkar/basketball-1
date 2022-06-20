@@ -8,6 +8,8 @@ import {
 import PlayerDetail from './pages/PlayerDetail/PlayerDetail';
 import Summary from './pages/Summary/Summary';
 import ScoreBoard from './pages/ScoreBoard/ScoreBoard';
+import MobileOne from './pages/MobileStart/MobileOne';
+import MobileController from './pages/MobileStart/MobileController';
 
 class App extends Component {
   constructor(props) {
@@ -47,6 +49,8 @@ class App extends Component {
             <Route path="/" element={<PlayerDetail setPlayers={this.setPlayers} ref={this.playerDetails}/>} />
             <Route path="ScoreBoard" element={<ScoreBoard players={this.state.players} />} />
             <Route path="Summary" element={<Summary />} />
+            <Route path="MobileOne" element={<MobileOne />} />
+            <Route path="MobileController" element={<MobileController />} />
           </Routes>
         </BrowserRouter>
       </div>

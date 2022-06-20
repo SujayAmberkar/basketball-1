@@ -1,9 +1,9 @@
-.main-container{
+.main-container-detail{
     display: flex;
     /* background-color: red; */
 }
 
-.team{
+.team-detail{
     /* background-color: aqua; */
     margin: 2rem 1rem 5rem 1rem;
     width: 50rem;
