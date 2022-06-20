@@ -1,8 +1,8 @@
-.main-container{
+.main-container-board{
     display: flex;
 }
 
-.team-card{
+.team-card-board{
     /* width: 40rem; */
     height: fit-content;
     margin: 0.5rem;
@@ -10,11 +10,11 @@
     width: fit-content;
 }
 
-.scoreButtons{
+.scoreButtons-board{
     width: fit-content;
     margin: 1rem;
 }
 
-.Player-list{
+.Player-list-board{
     margin: 1rem;
 }

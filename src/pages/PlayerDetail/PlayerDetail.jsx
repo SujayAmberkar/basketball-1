@@ -71,8 +71,8 @@ class PlayerDetail extends Component {
     const edit = this.state.edit
     const confirmButton = this.state.confirmButton
     return (
-      <div className='main-container'>
-        <div className="team">
+      <div className='main-container-detail'>
+        <div className="team-detail">
           <Typography>Team A</Typography>
           <Typography>Playing 5</Typography>
           <TableComponent ref={this.tap5} playerType={5} edit={edit}/>
@@ -81,7 +81,7 @@ class PlayerDetail extends Component {
           <button onClick={()=>this.confirmHandler()}>{confirmButton}</button>
         </div>
   
-        <div className="team">
+        <div className="team-detail">
           <Typography>Team B</Typography>
           <Typography>Playing 5</Typography>
           <TableComponent ref={this.tbp5} playerType={5} edit={edit} />
