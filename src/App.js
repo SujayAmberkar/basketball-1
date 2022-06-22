@@ -10,6 +10,7 @@ import Summary from './pages/Summary/Summary';
 import ScoreBoard from './pages/ScoreBoard/ScoreBoard';
 import MobileOne from './pages/MobileStart/MobileOne';
 import MobileController from './pages/MobileStart/MobileController';
+import TopBar from './components/TopBar';
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +45,7 @@ class App extends Component {
   render(){
     return (
       <div className="App">
+        <TopBar/>
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<PlayerDetail setPlayers={this.setPlayers} ref={this.playerDetails}/>} />

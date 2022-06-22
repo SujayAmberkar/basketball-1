@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
+// import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
@@ -10,7 +10,8 @@ import './ScoreCard.css'
 
 
 export default function ScoreCard() {
-    const [q, setQ] = useState(1)
+    // const [q, setQ] = useState(1)
+    const q = 1;
     const [timerButton, setTimerButton] = useState('Start')
     const timerButtonHandler=()=>{
         if(timerButton==='Start'){
