@@ -50,7 +50,7 @@ class App extends Component {
             <Route path="ScoreBoard" element={<ScoreBoard players={this.state.players} />} />
             <Route path="Summary" element={<Summary />} />
             <Route path="MobileOne" element={<MobileOne />} />
-            <Route path="MobileController" element={<MobileController />} />
+            <Route path="MobileController" element={<MobileController players={this.state.players}/>} />
           </Routes>
         </BrowserRouter>
       </div>

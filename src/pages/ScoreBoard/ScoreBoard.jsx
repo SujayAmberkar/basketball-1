@@ -11,7 +11,7 @@ import { Grid,Paper } from '@mui/material';
 import ScoreBoardFooter from '../../components/ScoreBoardFooter';
 import { styled } from '@mui/material/styles';
 
-const scoreButtons = ["Start",1,2,3,"A","F","U","End Match"]
+const scoreButtons = [,1,2,3,"A","F","B"]
 
 // const Item = styled(Paper)(({ theme }) => ({
 //   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -37,9 +37,9 @@ export default class ScoreBoard extends Component {
 
   
 
-  // end_match(){
-  //   this.send_data(this.state.MatchData)
-  // }
+  end_match(){
+     this.send_data(this.state.MatchData)
+  }
 
   // start_match(){
   //   const time = this.getUTCtime()
@@ -91,6 +91,10 @@ export default class ScoreBoard extends Component {
   scoreRecord(type){
     console.log(type)
     const time = this.getUTCtime()
+    if (type === "start"){
+      this.setState({StartMatch: time})
+      return 
+    }
     console.log(this.state.StartMatch)
     const record = [...this.state.MatchData, {scoreType: type ,sec: (time-this.state.StartMatch), player:{team: "", name: "", number: 0}}]
     this.setState({MatchData: record})
@@ -126,7 +130,7 @@ export default class ScoreBoard extends Component {
               <Card id='scoreButtons' className="team-card-board" sx={{minWidth:275}} >
                       <CardContent sx={{display:'flex'}}>
                         <Grid container rowSpacing={0.5} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-                          {/* <Button onClick={()=>{this.start_match()}} variant='contained'>Start</Button> */}
+                         <Button onClick={()=>{this.scoreRecord("start")}} variant='contained'>Start</Button>
                           {
                             scoreButtons.map((i)=>{
                               return(<Grid item xs={6}>
@@ -134,7 +138,7 @@ export default class ScoreBoard extends Component {
                               </Grid>)
                             })
                           }
-                          {/* <Button onClick={()=>this.end_match()} className="scoreButtons" variant='contained'>End Match</Button> */}
+                          <Button onClick={()=>this.end_match()} className="scoreButtons" variant='contained'>End Match</Button>
                         </Grid>
                         {/* <button onClick={this.show}>Show</button> */}
                       </CardContent>
