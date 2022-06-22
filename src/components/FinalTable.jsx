@@ -6,7 +6,7 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import { TextField, Typography
+import { Typography
  } from '@mui/material';
  import './FinalTable.css'
 
@@ -19,12 +19,12 @@ function FinalTable() {
             score:'10'
         },
         {
-            name:'Tarun',
+            name:'Rohit',
             n:'2',
             score:'20'
         },
         {
-            name:'Rohit',
+            name:'Tarun',
             n:'3',
             score:'101'
         },

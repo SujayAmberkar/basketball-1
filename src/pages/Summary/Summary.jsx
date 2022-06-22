@@ -18,6 +18,7 @@ function Summary() {
               <CardContent >
                 <Typography variant="h4">8</Typography>
               </CardContent>
+              <hr />
               <CardContent>
                 <Typography variant='h4'>13</Typography>
               </CardContent>

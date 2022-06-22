@@ -7,20 +7,10 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import "./ScoreBoard.css"
-import { Grid,Paper } from '@mui/material';
+import { Grid } from '@mui/material';
 import ScoreBoardFooter from '../../components/ScoreBoardFooter';
-import { styled } from '@mui/material/styles';
 
-const scoreButtons = [,1,2,3,"A","F","B"]
-
-// const Item = styled(Paper)(({ theme }) => ({
-//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-//   ...theme.typography.body2,
-//   padding: theme.spacing(1),
-//   textAlign: 'center',
-//   color: theme.palette.text.secondary,
-//   width:"15rem"
-// }));
+const scoreButtons = [1,2,3,"A","F","B"]
 
 
 export default class ScoreBoard extends Component {
