@@ -76,11 +76,10 @@ export default class MobileController extends Component {
                         <Grid className='inner-grid-controller' container item spacing={3}>
                             <button key={"start"} onClick={()=>{this.changeLabel()}} className='EndButton-controller' variant='contained'>{this.state.label}</button>
                             {                              
-                                buttonArray.map((i)=>{
-                                  if(this.state.label === "End Match"){
+                                this.state.label === "End Match" && buttonArray.map((i)=>{
                                     return(                                     
                                         <button key={i} onClick={()=>{this.scoreRecord(i)}} className='scoreButtons-controller' variant='contained'>{i}</button>     
-                                    )}
+                                    )
                                 })
                                 
                             }
