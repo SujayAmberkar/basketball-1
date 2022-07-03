@@ -9,6 +9,7 @@ import Typography from '@mui/material/Typography';
 import "./ScoreBoard.css"
 import { Grid } from '@mui/material';
 import ScoreBoardFooter from '../../components/ScoreBoardFooter';
+import PlayerSwitch from '../../components/PlayerSwitch';
 
 const scoreButtons = [1,2,3,"A","F","B"]
 
@@ -24,8 +25,6 @@ export default class ScoreBoard extends Component {
     }
     
   }
-
-  
 
   end_match(){
      this.send_data(this.state.MatchData)
@@ -64,7 +63,7 @@ export default class ScoreBoard extends Component {
   
   setPlayer(pNumber, pName, teamName){
     const lastEntry = (this.state.MatchData).pop()
-    console.log(lastEntry)
+    // console.log(lastEntry)
     const record = [...this.state.MatchData, {scoreType: lastEntry.scoreType ,sec: lastEntry.sec, player:{team: teamName, name: pName, number: pNumber}}]
     this.setState({MatchData: record})
   }
@@ -79,19 +78,19 @@ export default class ScoreBoard extends Component {
   }
 
   scoreRecord(type){
-    console.log(type)
+    // console.log(type)
     const time = this.getUTCtime()
     if (type === "start"){
       this.setState({StartMatch: time})
       return 
     }
-    console.log(this.state.StartMatch)
+    // console.log(this.state.StartMatch)
     const record = [...this.state.MatchData, {scoreType: type ,sec: (time-this.state.StartMatch), player:{team: "", name: "", number: 0}}]
     this.setState({MatchData: record})
   }
 
   render() {
-    console.log(this.state.MatchData)
+    // console.log(this.state.MatchData)
     const teamA = this.state.playerData.team_a
     const teamB = this.state.playerData.team_b
     return (
@@ -107,6 +106,7 @@ export default class ScoreBoard extends Component {
                             teamA.playing_5.map((i)=>{
                               return(
                                   <Grid id={i} container item spacing={3}>
+                                    <PlayerSwitch/>
                                     <Button className='scoreButtons-board' variant='contained'>{i.number}</Button>
                                     <Button onClick={()=>{this.setPlayer(i.number, i.name, teamA.team_name)}} variant="contained">{i.name}</Button>
                                   </Grid>                        
@@ -140,7 +140,8 @@ export default class ScoreBoard extends Component {
                           {
                             teamB.playing_5.map((i)=>{
                               return(
-                                  <Grid id={i} container item spacing={3}>
+                                  <Grid id={i} key={i.number} container item spacing={3}>
+                                    <PlayerSwitch extras={this.props}/>
                                     <Button variant='contained'>{i.number}</Button>
                                     <Button onClick={()=>{this.setPlayer(i.number, i.name, teamB.team_name)}}>{i.name}</Button>
                                   </Grid>                        
@@ -159,6 +160,7 @@ export default class ScoreBoard extends Component {
             </div>
         </div>
         <ScoreBoardFooter/>
+       
       </div>
     )
   }

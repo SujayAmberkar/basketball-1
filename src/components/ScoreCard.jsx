@@ -1,25 +1,16 @@
-import React,{useState} from 'react'
+import React from 'react'
 import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 // import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import './ScoreCard.css'
+import StopWatch from './Stopwatch';
 
 
 export default function ScoreCard() {
-    // const [q, setQ] = useState(1)
     const q = 1;
-    const [timerButton, setTimerButton] = useState('Start')
-    const timerButtonHandler=()=>{
-        if(timerButton==='Start'){
-            setTimerButton('Stop')
-        }else{
-            setTimerButton('Start')
-        }
-    }
 
   return (
     <Box className='ScoreCard-main'>
@@ -39,12 +30,12 @@ export default function ScoreCard() {
                 </CardContent>
         </Card>
 
-        {/*  */}
+        {/* stopwatch  */}
         <Card sx={{ minWidth: 275,margin:'1rem' }}>
                 <CardContent sx={{display:'flex'}}>
                     <Divider orientation='vertical' align="left"/>
-                    <Button className='timer-button' onClick={timerButtonHandler} variant="contained" color="success">{timerButton}</Button>
-                    {/* <Stopwatch/> */}
+                    {/* <Button className='timer-button' onClick={timerButtonHandler} variant="contained" color="success">{timerButton}</Button> */}
+                    <StopWatch/>
                 </CardContent>
         </Card>
     </Box>
