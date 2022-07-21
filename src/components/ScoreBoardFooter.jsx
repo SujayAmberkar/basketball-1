@@ -14,7 +14,7 @@ function ScoreBoardFooter() {
     <Box className='ScoreCard-main'>
         <Button variant='contained'>Confirm</Button>
         <Button variant='contained'>End Q</Button>
-        <Link to="/Summary"><Button variant='contained'>Go to Highlights</Button></Link>
+        <Link to="/Summary" style={{textDecoration:'none'}}><Button variant='contained'>Go to Highlights</Button></Link>
     </Box>
   )
 }

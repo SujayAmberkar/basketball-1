@@ -11,6 +11,19 @@ import ScoreBoard from './pages/ScoreBoard/ScoreBoard';
 import MobileOne from './pages/MobileStart/MobileOne';
 import MobileController from './pages/MobileStart/MobileController';
 import TopBar from './components/TopBar';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import wavy from '../src/components/Images/waves.svg';
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1E90FF',
+    },
+    secondary: {
+      main: '#edf2ff',
+    },
+  },
+});
 
 class App extends Component {
   constructor(props) {
@@ -44,6 +57,7 @@ class App extends Component {
   }
   render(){
     return (
+      <ThemeProvider theme={theme}>
       <div className="App">
         <TopBar/>
         <BrowserRouter>
@@ -55,7 +69,9 @@ class App extends Component {
             <Route path="MobileController" element={<MobileController players={this.state.players}/>} />
           </Routes>
         </BrowserRouter>
+        <img src={wavy} className="wavy" height="1%" width="100%" alt="wavy" />
       </div>
+      </ThemeProvider>
     );
   }
 

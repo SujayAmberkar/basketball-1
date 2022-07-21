@@ -1,4 +1,4 @@
-import React,{useEffect,useState} from 'react';
+import React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 // import Typography from '@mui/material/Typography';
@@ -22,7 +22,8 @@ export default function PlayerSwitch(props) {
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
-  const [players, setPlayers] = useState(["player6","player7","player8","player9","player10","player11"]);
+  const players = ["player6","player7","player8","player9","player10","player11"];
+  // const [players, setPlayers] = useState(["player6","player7","player8","player9","player10","player11"]);
 
   return (
     <div>

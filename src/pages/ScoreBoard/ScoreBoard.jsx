@@ -11,6 +11,7 @@ import { Grid } from '@mui/material';
 import ScoreBoardFooter from '../../components/ScoreBoardFooter';
 import PlayerSwitch from '../../components/PlayerSwitch';
 
+
 const scoreButtons = [1,2,3,"A","F","B"]
 
 
@@ -101,14 +102,17 @@ export default class ScoreBoard extends Component {
             {/* Team A card */}
             <Card id='teamA' className="team-card-board" sx={{minWidth:330}}>
               <CardContent sx={{display:'flex'}}>
-                        <Grid className='Player-list-board' container spacing={5}>
+                        <Grid className='Player-list-board' container spacing={5} style={{alignItems:'left'}}>
+                          <div style={{width:'100%',paddingLeft:'20%',marginTop:'10px'}}>
+                            <Typography fontFamily="comfortaa" variant="h5">Team A</Typography>
+                          </div>
                           {
                             teamA.playing_5.map((i)=>{
                               return(
-                                  <Grid id={i} container item spacing={3}>
+                                  <Grid id={i} container item spacing={3} style={{justifyContent:'space-evenly'}}>
                                     <PlayerSwitch/>
-                                    <Button className='scoreButtons-board' variant='contained'>{i.number}</Button>
-                                    <Button onClick={()=>{this.setPlayer(i.number, i.name, teamA.team_name)}} variant="contained">{i.name}</Button>
+                                    <Button variant='contained'>{i.number}</Button>
+                                    <Button className='scoreButtons-board' onClick={()=>{this.setPlayer(i.number, i.name, teamA.team_name)}} variant="contained">{i.name}</Button>
                                   </Grid>                        
                               )
                             })
@@ -123,7 +127,8 @@ export default class ScoreBoard extends Component {
                          <Button onClick={()=>{this.scoreRecord("start")}} variant='contained'>Start</Button>
                           {
                             scoreButtons.map((i)=>{
-                              return(<Grid item xs={6}>
+                              return(
+                              <Grid item xs={6}>
                                 <Button id={i} onClick={()=>{this.scoreRecord(i)}} className='scoreButtons-board' variant='contained'>{i}</Button>
                               </Grid>)
                             })
@@ -137,17 +142,21 @@ export default class ScoreBoard extends Component {
               <Card id='teamB' className="team-card-board" sx={{minWidth:330}}>
                       <CardContent sx={{display:'flex'}}>
                         <Grid className='Player-list-board' container spacing={5}>
+                          <div style={{width:'100%',paddingLeft:'20%',marginTop:'10px'}}>
+                            <Typography fontFamily="comfortaa" variant="h5">Team B</Typography>
+                          </div>
                           {
                             teamB.playing_5.map((i)=>{
                               return(
-                                  <Grid id={i} key={i.number} container item spacing={3}>
+                                  <Grid id={i} key={i.number} container item spacing={3} style={{justifyContent:'space-evenly'}}>
                                     <PlayerSwitch extras={this.props}/>
                                     <Button variant='contained'>{i.number}</Button>
-                                    <Button onClick={()=>{this.setPlayer(i.number, i.name, teamB.team_name)}}>{i.name}</Button>
+                                    <Button className='scoreButtons-board' variant='contained' onClick={()=>{this.setPlayer(i.number, i.name, teamB.team_name)}}>{i.name}</Button>
                                   </Grid>                        
                               )
                             })
                           }
+                          
                           </Grid>
                       </CardContent>
                 </Card>

@@ -10,7 +10,7 @@ import StopWatch from './Stopwatch';
 
 
 export default function ScoreCard() {
-    const q = 1;
+  const q = 1;
 
   return (
     <Box className='ScoreCard-main'>

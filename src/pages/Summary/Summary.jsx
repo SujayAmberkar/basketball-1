@@ -25,8 +25,13 @@ function Summary() {
             </Card>
           </Box>
           <HighlightsTable/>
-          <Typography variant='h5'>Match Highlights</Typography>
-          <MatchHighligthsVideo embedId='oiixoRfEmyw'/>
+          
+          <div className='video-container'>
+          <Typography fontFamily="comfortaa" variant='h5' style={{color:'white'}}>Video Highlights</Typography>
+            <MatchHighligthsVideo embedId='oiixoRfEmyw'/>
+            <MatchHighligthsVideo embedId='DufU8s4_IBw'/>
+          </div>
+          
         </div>
         
         {/* Right */}
@@ -38,11 +43,11 @@ function Summary() {
                 <Typography variant="h6">Match MVP</Typography>
               </CardContent>
               <CardContent>
-                <Typography variant='h6'>Player 1 Score</Typography>
+                <Typography fontFamily="comfortaa" variant='h6'>Player 1 12</Typography>
               </CardContent>
             </Card>
           </Box>
-          <MatchHighligthsVideo embedId='DufU8s4_IBw'/>
+          
           <FinalTable/>
         </div>
       </div>

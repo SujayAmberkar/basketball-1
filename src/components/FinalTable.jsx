@@ -32,13 +32,47 @@ function FinalTable() {
             name:'Sam Smith',
             n:'4',
             score:'1210'
+        },{
+            name:'Sujay',
+            n:'5',
+            score:'10'
+        },
+        {
+            name:'Rohit',
+            n:'6',
+            score:'20'
+        },
+        {
+            name:'Tarun',
+            n:'7',
+            score:'101'
+        },
+        {
+            name:'Sam Smith',
+            n:'8',
+            score:'1210'
+        },
+        {
+            name:'Rohit',
+            n:'9',
+            score:'20'
+        },
+        {
+            name:'Tarun',
+            n:'10',
+            score:'101'
+        },
+        {
+            name:'Sam Smith',
+            n:'11',
+            score:'1210'
         }
     ]
   return (
     <div className='final-table-container'>
         
         <TableContainer component={Paper}>
-        <Typography>Team A</Typography>
+        <Typography variant='h6' fontFamily="comfortaa">Team A</Typography>
             <Table size="small" sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
@@ -51,10 +85,10 @@ function FinalTable() {
                     {
                         data.map((i)=>{
                             return( 
-                                <TableRow>
-                                    <TableCell component="th" scope="row">{i.n}</TableCell>
-                                    <TableCell component="th" scope="row">{i.name}</TableCell>
-                                    <TableCell component="th" scope="row">{i.score}</TableCell>
+                                <TableRow >
+                                    <TableCell style={{borderBottom:'none'}} component="th" scope="row">{i.n}</TableCell>
+                                    <TableCell style={{borderBottom:'none'}} component="th" scope="row">{i.name}</TableCell>
+                                    <TableCell style={{borderBottom:'none'}} component="th" scope="row">{i.score}</TableCell>
                                 </TableRow>
                             )
                         })
@@ -62,7 +96,7 @@ function FinalTable() {
                     
                 </TableBody>
             </Table>
-            <Typography>Team B</Typography>
+            <Typography variant='h6' fontFamily="comfortaa">Team B</Typography>
             <Table size="small" sx={{ minWidth: 650 }} aria-label="simple table">
                 <TableHead>
                     <TableRow>
@@ -76,9 +110,9 @@ function FinalTable() {
                         data.map((i)=>{
                             return( 
                                 <TableRow>
-                                    <TableCell component="th" scope="row">{i.n}</TableCell>
-                                    <TableCell component="th" scope="row">{i.name}</TableCell>
-                                    <TableCell component="th" scope="row">{i.score}</TableCell>
+                                    <TableCell style={{borderBottom:'none'}} component="th" scope="row">{i.n}</TableCell>
+                                    <TableCell style={{borderBottom:'none'}} component="th" scope="row">{i.name}</TableCell>
+                                    <TableCell style={{borderBottom:'none'}} component="th" scope="row">{i.score}</TableCell>
                                 </TableRow>
                             )
                         })
